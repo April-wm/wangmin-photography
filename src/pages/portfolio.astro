@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PhotoGrid from '../components/PhotoGrid.astro';
+import { photos } from '../data/photos';
+---
+
+<BaseLayout title="作品集 · 王敏摄影">
+  <section class="portfolio-intro">
+    <p class="section-kicker">ARCHIVE / 2023—2025</p>
+    <h1>作品集</h1>
+    <p>关于人像、自然、旅行途中遇见的光与风景。</p>
+  </section>
+  <section class="portfolio-work">
+    <div class="filters" aria-label="作品分类">
+      <button class="filter is-selected" data-filter="all">全部 <span>{photos.length}</span></button>
+      <button class="filter" data-filter="portrait">人像 <span>{photos.filter((photo) => photo.category === 'portrait').length}</span></button>
+      <button class="filter" data-filter="street">街拍 <span>{photos.filter((photo) => photo.category === 'street').length}</span></button>
+      <button class="filter" data-filter="landscape">风景 <span>{photos.filter((photo) => photo.category === 'landscape').length}</span></button>
+      <button class="filter" data-filter="other">其他 <span>{photos.filter((photo) => photo.category === 'other').length}</span></button>
+    </div>
+    <PhotoGrid photos={photos} />
+  </section>
+  <script>
+    const filters = document.querySelectorAll<HTMLButtonElement>('[data-filter]');
+    const cards = document.querySelectorAll<HTMLElement>('[data-photo]');
+    filters.forEach((filter) => {
+      filter.addEventListener('click', () => {
+        const selected = filter.dataset.filter;
+        filters.forEach((item) => item.classList.toggle('is-selected', item === filter));
+        cards.forEach((card) => card.classList.toggle('is-hidden', selected !== 'all' && card.dataset.category !== selected));
+      });
+    });
+  </script>
+</BaseLayout>

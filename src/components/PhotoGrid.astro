@@ -1,0 +1,55 @@
+---
+import type { Photo } from '../data/photos';
+
+interface Props { photos: Photo[]; featured?: boolean; }
+const { photos, featured = false } = Astro.props;
+---
+
+<div class:list={['photo-grid', { featured }]}>
+  {photos.map((photo, index) => (
+    <button
+      class:list={['photo-card', `is-${photo.orientation}`]}
+      data-photo
+      data-src={photo.src}
+      data-alt={photo.alt}
+      data-title={photo.title}
+      data-meta={`${photo.location} · ${photo.year}`}
+      data-category={photo.category}
+      aria-label={`查看作品：${photo.title}`}
+      style={`--index: ${index}`}
+    >
+      <img src={photo.src} alt={photo.alt} loading={featured && index < 3 ? 'eager' : 'lazy'} />
+      <span class="photo-card__shade"></span>
+      <span class="photo-card__caption"><em>{photo.title}</em><small>{photo.location} · {photo.year}</small></span>
+    </button>
+  ))}
+</div>
+
+<dialog class="lightbox" data-lightbox aria-label="图片预览">
+  <button class="lightbox__close" data-close aria-label="关闭图片预览">×</button>
+  <figure>
+    <img data-lightbox-image src="" alt="" />
+    <figcaption><em data-lightbox-title></em><span data-lightbox-meta></span></figcaption>
+  </figure>
+</dialog>
+
+<script>
+  const lightbox = document.querySelector<HTMLDialogElement>('[data-lightbox]');
+  const image = document.querySelector<HTMLImageElement>('[data-lightbox-image]');
+  const title = document.querySelector<HTMLElement>('[data-lightbox-title]');
+  const meta = document.querySelector<HTMLElement>('[data-lightbox-meta]');
+  document.querySelectorAll<HTMLButtonElement>('[data-photo]').forEach((button) => {
+    button.addEventListener('click', () => {
+      if (!lightbox || !image || !title || !meta) return;
+      image.src = button.dataset.src ?? '';
+      image.alt = button.dataset.alt ?? '';
+      title.textContent = button.dataset.title ?? '';
+      meta.textContent = button.dataset.meta ?? '';
+      lightbox.showModal();
+    });
+  });
+  document.querySelector('[data-close]')?.addEventListener('click', () => lightbox?.close());
+  lightbox?.addEventListener('click', (event) => {
+    if (event.target === lightbox) lightbox.close();
+  });
+</script>
