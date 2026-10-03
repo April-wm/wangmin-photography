@@ -27,10 +27,12 @@ const { photos, featured = false } = Astro.props;
 
 <dialog class="lightbox" data-lightbox aria-label="图片预览">
   <button class="lightbox__close" data-close aria-label="关闭图片预览">×</button>
+  <button class="lightbox__nav lightbox__nav--previous" data-previous aria-label="查看上一张作品">←</button>
   <figure>
     <img data-lightbox-image src="" alt="" />
     <figcaption><em data-lightbox-title></em><span data-lightbox-meta></span></figcaption>
   </figure>
+  <button class="lightbox__nav lightbox__nav--next" data-next aria-label="查看下一张作品">→</button>
 </dialog>
 
 <script>
@@ -38,18 +40,43 @@ const { photos, featured = false } = Astro.props;
   const image = document.querySelector<HTMLImageElement>('[data-lightbox-image]');
   const title = document.querySelector<HTMLElement>('[data-lightbox-title]');
   const meta = document.querySelector<HTMLElement>('[data-lightbox-meta]');
-  document.querySelectorAll<HTMLButtonElement>('[data-photo]').forEach((button) => {
+  const photoButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-photo]')];
+  let activeIndex = 0;
+  let touchStartX = 0;
+
+  const showPhoto = (index: number) => {
+    if (!lightbox || !image || !title || !meta || photoButtons.length === 0) return;
+    activeIndex = (index + photoButtons.length) % photoButtons.length;
+    const button = photoButtons[activeIndex];
+    image.src = button.dataset.src ?? '';
+    image.alt = button.dataset.alt ?? '';
+    title.textContent = button.dataset.title ?? '';
+    meta.textContent = button.dataset.meta ?? '';
+  };
+
+  photoButtons.forEach((button, index) => {
     button.addEventListener('click', () => {
-      if (!lightbox || !image || !title || !meta) return;
-      image.src = button.dataset.src ?? '';
-      image.alt = button.dataset.alt ?? '';
-      title.textContent = button.dataset.title ?? '';
-      meta.textContent = button.dataset.meta ?? '';
-      lightbox.showModal();
+      showPhoto(index);
+      if (!lightbox?.open) lightbox?.showModal();
     });
   });
+
+  document.querySelector('[data-previous]')?.addEventListener('click', () => showPhoto(activeIndex - 1));
+  document.querySelector('[data-next]')?.addEventListener('click', () => showPhoto(activeIndex + 1));
   document.querySelector('[data-close]')?.addEventListener('click', () => lightbox?.close());
   lightbox?.addEventListener('click', (event) => {
     if (event.target === lightbox) lightbox.close();
   });
+  lightbox?.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') showPhoto(activeIndex - 1);
+    if (event.key === 'ArrowRight') showPhoto(activeIndex + 1);
+  });
+  lightbox?.addEventListener('touchstart', (event) => {
+    touchStartX = event.changedTouches[0]?.clientX ?? 0;
+  }, { passive: true });
+  lightbox?.addEventListener('touchend', (event) => {
+    const distance = (event.changedTouches[0]?.clientX ?? touchStartX) - touchStartX;
+    if (Math.abs(distance) < 50) return;
+    showPhoto(activeIndex + (distance < 0 ? 1 : -1));
+  }, { passive: true });
 </script>
