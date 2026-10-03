@@ -42,21 +42,26 @@ const { photos, featured = false } = Astro.props;
   const meta = document.querySelector<HTMLElement>('[data-lightbox-meta]');
   const photoButtons = [...document.querySelectorAll<HTMLButtonElement>('[data-photo]')];
   let activeIndex = 0;
+  let activePhotos = photoButtons;
   let touchStartX = 0;
 
-  const showPhoto = (index: number) => {
-    if (!lightbox || !image || !title || !meta || photoButtons.length === 0) return;
-    activeIndex = (index + photoButtons.length) % photoButtons.length;
-    const button = photoButtons[activeIndex];
+  const visiblePhotos = () => photoButtons.filter((button) => !button.classList.contains('is-hidden'));
+
+  const showPhoto = (index: number, photos = activePhotos) => {
+    if (!lightbox || !image || !title || !meta || photos.length === 0) return;
+    activePhotos = photos;
+    activeIndex = (index + activePhotos.length) % activePhotos.length;
+    const button = activePhotos[activeIndex];
     image.src = button.dataset.src ?? '';
     image.alt = button.dataset.alt ?? '';
     title.textContent = button.dataset.title ?? '';
     meta.textContent = button.dataset.meta ?? '';
   };
 
-  photoButtons.forEach((button, index) => {
+  photoButtons.forEach((button) => {
     button.addEventListener('click', () => {
-      showPhoto(index);
+      const currentCategoryPhotos = visiblePhotos();
+      showPhoto(currentCategoryPhotos.indexOf(button), currentCategoryPhotos);
       if (!lightbox?.open) lightbox?.showModal();
     });
   });
