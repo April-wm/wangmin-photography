@@ -1,0 +1,16 @@
+name: Deploy to Cloudflare Worker
+on:
+  push:
+    branches: [ main ] # 如果你的分支不是main，改成你的分支名，比如master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy Worker
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
