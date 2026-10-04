@@ -17,6 +17,7 @@ import { photos } from '../data/photos';
       <button class="filter" data-filter="street">街拍 <span>{photos.filter((photo) => photo.category === 'street').length}</span></button>
       <button class="filter" data-filter="landscape">风景 <span>{photos.filter((photo) => photo.category === 'landscape').length}</span></button>
       <button class="filter" data-filter="flower">花卉 <span>{photos.filter((photo) => photo.category === 'flower').length}</span></button>
+      <button class="filter" data-filter="animals">动物 <span>{photos.filter((photo) => photo.category === 'animals').length}</span></button>
       <button class="filter" data-filter="other">其他 <span>{photos.filter((photo) => photo.category === 'other').length}</span></button>
     </div>
     <PhotoGrid photos={photos} />
