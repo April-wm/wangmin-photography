@@ -168,7 +168,7 @@ export const photos: Photo[] = [
   {
   id: '26',
   title: '',
-  category: 'animal',
+  category: 'animals',
   location: '成都',
   year: '2026',
   src: '/images/portfolio/Z30_1598.jpg',
@@ -178,7 +178,7 @@ export const photos: Photo[] = [
  {
   id: '27',
   title: '',
-  category: 'animal',
+  category: 'animals',
   location: '成都',
   year: '2026',
   src: '/images/portfolio/Z30_1627.jpg',
@@ -188,7 +188,7 @@ export const photos: Photo[] = [
    {
   id: '28',
   title: '',
-  category: 'animal',
+  category: 'animals',
   location: '成都',
   year: '2026',
   src: '/images/portfolio/Z30_1639.jpg',
@@ -198,7 +198,7 @@ export const photos: Photo[] = [
   {
   id: '29',
   title: '',
-  category: 'animal',
+  category: 'animals',
   location: '杭州',
   year: '2026',
   src: '/images/portfolio/Z30_3317.jpg',
