@@ -81,7 +81,7 @@ export const photos: Photo[] = [
   category: 'flower',
   location: '杭州',
   year: '2026',
-  src: '/images/portfolio/Z30_1607-2.jpg',
+  src: '/images/portfolio/baihua2.jpg',
   alt: '',
   orientation: 'portrait'
 },
