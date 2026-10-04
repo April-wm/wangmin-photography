@@ -22,7 +22,7 @@ export const categoryLabels: Record<Category, string> = {
 
 // 图片的网页版本放在 public/images/portfolio。原始文件仍保留在 D:\照片\原图。
 export const photos: Photo[] = [
-  { id: '01', title: '林间微光', category: 'portrait', location: '自然光人像', year: '2026', src: '/images/portfolio/portrait-forest.jpg', alt: '林间侧脸人像', orientation: 'portrait' },
+  { id: '01', title: '川西微光', category: 'portrait', location: '自然光人像', year: '2026', src: '/images/portfolio/ChatGPT Image 2026年5月1日 21_54_12.png', alt: '川西绝美', orientation: 'portrait' },
   { id: '02', title: '雪山来信', category: 'landscape', location: '四姑娘山', year: '2026', src: '/images/portfolio/mountain-bright.jpg', alt: '晴空下的雪山', orientation: 'landscape' },
   { id: '03', title: '山寺之前', category: 'portrait', location: '川西', year: '2026', src: '/images/portfolio/portrait-fan.jpg', alt: '手持扇子的民族风人像', orientation: 'landscape' },
   { id: '04', title: '山中白塔', category: 'other', location: '川西', year: '2026', src: '/images/portfolio/temple.jpg', alt: '山间白塔', orientation: 'portrait' },
@@ -35,4 +35,15 @@ export const photos: Photo[] = [
   { id: '10', title: '远山与湖', category: 'landscape', location: '山水练习', year: '2026', src: '/images/portfolio/lake.jpg', alt: '远山和湖面', orientation: 'landscape' },
   { id: '11', title: '绿意之中', category: 'portrait', location: '自然光人像', year: '2026', src: '/images/portfolio/portrait-garden.jpg', alt: '花园中的白裙人像', orientation: 'portrait' },
   { id: '12', title: '金色时刻', category: 'portrait', location: '自然光人像', year: '2026', src: '/images/portfolio/portrait-golden.jpg', alt: '金色植物旁的人像', orientation: 'portrait' },
+  {
+  id: '13',
+  title: '自然之美',
+  category: 'flower',
+  location: '杭州',
+  year: '2026',
+  src: '/images/portfolio/3_3.jpg',
+  alt: '无敌之美花',
+  orientation: 'portrait'
+},
+
 ];
