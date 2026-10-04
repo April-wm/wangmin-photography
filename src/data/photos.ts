@@ -22,7 +22,7 @@ export const categoryLabels: Record<Category, string> = {
 
 // 图片的网页版本放在 public/images/portfolio。原始文件仍保留在 D:\照片\原图。
 export const photos: Photo[] = [
-  { id: '01', title: '川西微光', category: 'portrait', location: '自然光人像', year: '2026', src: '/images/portfolio/ChatGPT Image 2026年5月1日 21_54_12.png', alt: '川西绝美', orientation: 'portrait' },
+  { id: '01', title: '川西微光', category: 'portrait', location: '自然光人像', year: '2026', src: '/images/portfolio/chuanxi.png', alt: '川西绝美', orientation: 'portrait' },
   { id: '02', title: '雪山来信', category: 'landscape', location: '四姑娘山', year: '2026', src: '/images/portfolio/mountain-bright.jpg', alt: '晴空下的雪山', orientation: 'landscape' },
   { id: '03', title: '山寺之前', category: 'portrait', location: '川西', year: '2026', src: '/images/portfolio/portrait-fan.jpg', alt: '手持扇子的民族风人像', orientation: 'landscape' },
   { id: '04', title: '山中白塔', category: 'other', location: '川西', year: '2026', src: '/images/portfolio/temple.jpg', alt: '山间白塔', orientation: 'portrait' },
