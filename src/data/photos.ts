@@ -181,7 +181,7 @@ export const photos: Photo[] = [
   category: 'animal',
   location: '成都',
   year: '2026',
-  src: '/images/portfolio/Z30_1627',
+  src: '/images/portfolio/Z30_1627.jpg',
   alt: '',
   orientation: 'portrait'
 },
