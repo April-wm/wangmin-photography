@@ -45,5 +45,284 @@ export const photos: Photo[] = [
   alt: '无敌之美花',
   orientation: 'portrait'
 },
-
+ {
+  id: '14',
+  title: '小黄花',
+  category: 'flower',
+  location: '杭州',
+  year: '2026',
+  src: '/images/portfolio/hh.jpg',
+  alt: '小黄花',
+  orientation: 'portrait'
+},
+   {
+  id: '15',
+  title: '',
+  category: 'flower',
+  location: '杭州',
+  year: '2026',
+  src: '/images/portfolio/4_2.jpg',
+  alt: '',
+  orientation: 'portrait'
+},
+  {
+  id: '16',
+  title: '',
+  category: 'flower',
+  location: '杭州',
+  year: '2026',
+  src: '/images/portfolio/DSC_0318.JPG',
+  alt: '',
+  orientation: 'portrait'
+},
+    {
+  id: '17',
+  title: '',
+  category: 'flower',
+  location: '杭州',
+  year: '2026',
+  src: '/images/portfolio/Z30_1607-2.jpg',
+  alt: '',
+  orientation: 'portrait'
+},
+   {
+  id: '18',
+  title: '',
+  category: 'flower',
+  location: '杭州',
+  year: '2026',
+  src: '/images/portfolio/Z30_1607-2.jpg',
+  alt: '',
+  orientation: 'portrait'
+},
+  {
+  id: '19',
+  title: '',
+  category: 'portrait',
+  location: '川西',
+  year: '2026',
+  src: '/images/portfolio/chuanxi2.png',
+  alt: '',
+  orientation: 'portrait'
+},
+  {
+  id: '20',
+  title: '',
+  category: 'portrait',
+  location: '川西',
+  year: '2026',
+  src: '/images/portfolio/Z30_2951.jpg',
+  alt: '',
+  orientation: 'portrait'
+},
+  {
+  id: '21',
+  title: '',
+  category: 'portrait',
+  location: '川西',
+  year: '2026',
+  src: '/images/portfolio/Z30_1883.jpg',
+  alt: '',
+  orientation: 'portrait'
+},
+{
+  id: '22',
+  title: '',
+  category: 'portrait',
+  location: '武义',
+  year: '2026',
+  src: '/images/portfolio/sa.jpg',
+  alt: '',
+  orientation: 'portrait'
+},
+  {
+  id: '23',
+  title: '',
+  category: 'landscape',
+  location: '川西',
+  year: '2026',
+  src: '/images/portfolio/snow.jpg',
+  alt: '',
+  orientation: 'landscape'
+},
+{
+  id: '24',
+  title: '',
+  category: 'landscape',
+  location: '川西',
+  year: '2026',
+  src: '/images/portfolio/tone.jpg',
+  alt: '',
+  orientation: 'landscape'
+},
+  {
+  id: '25',
+  title: '',
+  category: 'landscape',
+  location: '宁波',
+  year: '2026',
+  src: '/images/portfolio/Z30_0582.jpg',
+  alt: '',
+  orientation: 'portrait'
+},
+  {
+  id: '26',
+  title: '',
+  category: 'animal',
+  location: '成都',
+  year: '2026',
+  src: '/images/portfolio/Z30_1598.jpg',
+  alt: '',
+  orientation: 'portrait'
+},
+ {
+  id: '27',
+  title: '',
+  category: 'animal',
+  location: '成都',
+  year: '2026',
+  src: '/images/portfolio/Z30_1627',
+  alt: '',
+  orientation: 'portrait'
+},
+   {
+  id: '28',
+  title: '',
+  category: 'animal',
+  location: '成都',
+  year: '2026',
+  src: '/images/portfolio/Z30_1639.jpg',
+  alt: '',
+  orientation: 'portrait'
+},
+  {
+  id: '29',
+  title: '',
+  category: 'animal',
+  location: '杭州',
+  year: '2026',
+  src: '/images/portfolio/Z30_3317.jpg',
+  alt: '',
+  orientation: 'portrait'
+},
+ {
+  id: '30',
+  title: '',
+  category: 'street',
+  location: '龙游',
+  year: '2026',
+  src: '/images/portfolio/DSC_3936.JPG',
+  alt: '',
+  orientation: 'landscape'
+},
+  {
+  id: '31',
+  title: '',
+  category: 'street',
+  location: '龙游',
+  year: '2026',
+  src: '/images/portfolio/DSC_3972.JPG',
+  alt: '',
+  orientation: 'landscape'
+},
+ {
+  id: '32',
+  title: '',
+  category: 'street',
+  location: '龙游',
+  year: '2026',
+  src: '/images/portfolio/DSC_3974.JPG',
+  alt: '',
+  orientation: 'landscape'
+},
+   {
+  id: '33',
+  title: '',
+  category: 'street',
+  location: '湖州',
+  year: '2026',
+  src: '/images/portfolio/deng.JPG',
+  alt: '',
+  orientation: 'landscape'
+},
+   {
+  id: '34',
+  title: '',
+  category: 'street',
+  location: '南浔',
+  year: '2026',
+  src: '/images/portfolio/Z30_0424.jpg',
+  alt: '',
+  orientation: 'landscape'
+},
+   {
+  id: '35',
+  title: '',
+  category: 'street',
+  location: '武义',
+  year: '2026',
+  src: '/images/portfolio/DSC_4074.JPG',
+  alt: '',
+  orientation: 'portrait'
+},
+   {
+  id: '36',
+  title: '',
+  category: 'street',
+  location: '武义',
+  year: '2026',
+  src: '/images/portfolio/DSC_4138.jpg',
+  alt: '',
+  orientation: 'portrait'
+},
+  {
+  id: '37',
+  title: '',
+  category: 'street',
+  location: '运城',
+  year: '2026',
+  src: '/images/portfolio/Z30_1431.jpg',
+  alt: '',
+  orientation: 'portrait'
+},
+  {
+  id: '38',
+  title: '',
+  category: 'street',
+  location: '杭州',
+  year: '2026',
+  src: '/images/portfolio/leifeng.jpg',
+  alt: '',
+  orientation: 'portrait'
+},
+   {
+  id: '39',
+  title: '',
+  category: 'street',
+  location: '武义',
+  year: '2026',
+  src: '/images/portfolio/denglong.jpg',
+  alt: '',
+  orientation: 'landscape'
+},
+  {
+  id: '40',
+  title: '',
+  category: 'street',
+  location: '武义',
+  year: '2026',
+  src: '/images/portfolio/hebian.jpg',
+  alt: '',
+  orientation: 'landscape'
+},
+  {
+  id: '41',
+  title: '',
+  category: 'street',
+  location: '武义',
+  year: '2026',
+  src: '/images/portfolio/hemian.jpg',
+  alt: '',
+  orientation: 'landscape'
+},
 ];
