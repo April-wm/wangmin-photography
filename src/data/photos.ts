@@ -16,7 +16,7 @@ export const categoryLabels: Record<Category, string> = {
   street: '街拍',
   landscape: '风景',
   flower: '花卉',
-  animals: '动物'
+  animals: '动物',
   other: '其他',
 };
 
