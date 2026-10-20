@@ -325,4 +325,24 @@ export const photos: Photo[] = [
   alt: '',
   orientation: 'landscape'
 },
+  {
+  id: '42',
+  title: '花影余韵',
+  category: 'flower',
+  location: '花卉练习',
+  year: '2026',
+  src: '/images/portfolio/flower-bougainvillea.jpg',
+  alt: '暖色虚化背景前盛开的粉色三角梅',
+  orientation: 'square'
+},
+  {
+  id: '43',
+  title: '落日归江',
+  category: 'landscape',
+  location: '日落练习',
+  year: '2026',
+  src: '/images/portfolio/sunset-river.jpg',
+  alt: '夕阳映照江面，远处古城建筑呈现剪影',
+  orientation: 'landscape'
+},
 ];
